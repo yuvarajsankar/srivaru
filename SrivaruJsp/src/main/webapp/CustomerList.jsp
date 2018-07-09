@@ -28,13 +28,19 @@
         <th>State</th>
         <th>Country</th>
         <th>Pin code</th>
+        <th>Date and time</th>
         <th>Vehicle type</th>
-        
+        <th>VIN number</th>
+        <th>Chassis Number</th>
+        <th>Password</th>
+        <th>Registration Number</th>
+        <th>Transaction ID</th>
+            
    </tr>
    <%
    try
    { 
-       Class.forName("com.mysql.jdbc.Driver");
+       Class.forName("com.mysql.cj.jdbc.Driver");
        String url="jdbc:mysql://localhost:3306/srivaru?useSSL=false";
        String username="root";
        String password="0000";
@@ -48,12 +54,19 @@
            <tr><td><%=rs.getString("customer_id") %></td>
            <td><%=rs.getString("fname") %></td>
            <td><%=rs.getString("lname")%></td>
+           <td><%=rs.getLong("mob_no")%></td>
            <td><%=rs.getString("address")%></td>
-           <td><%=rs.getString("mob_no")%></td>
+           <td><%=rs.getString("state")%></td>
+           <td><%=rs.getString("country")%></td>
+           <td><%=rs.getInt("pincode")%></td>
            <td><%=rs.getString("state") %></td>
            <td><%=rs.getString("vehicle_type") %></td>
+           <td><%=rs.getString("vin_number") %></td>
+           <td><%=rs.getString("chassis_number") %></td>
            <td><%=rs.getString("date") %></td>
            <td><%=rs.getString("password_Cus") %></td>   
+           <td><%=rs.getString("registration_number`") %></td>      
+           <td><%=rs.getString("transaction_id") %></td>
            </tr>
 
    <%

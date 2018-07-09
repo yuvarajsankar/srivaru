@@ -31,7 +31,7 @@
     <tr>
     	<td class="name">Mobile Number</td>
         <td class="val">:</td>
-        <td><input type="number" name="mobNoNumber" required ></td>
+        <td><input type="number" name="mobNoNumber" maxlength = 10 required ></td>
     </tr>
     <tr>
         <td colspan="3">&nbsp;</td>

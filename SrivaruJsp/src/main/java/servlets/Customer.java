@@ -48,7 +48,7 @@ public class Customer extends HttpServlet {
 		String userName = request.getParameter("userName");
 		
 		try {
-		Class.forName("com.mysql.jdbc.Driver");  
+		Class.forName("com.mysql.cj.jdbc.Driver");  
 		Connection con=DriverManager.getConnection(  
 		"jdbc:mysql://localhost:3306/srivaru?useSSL=false","root","0000");
 		Statement stmt=con.createStatement(); 
