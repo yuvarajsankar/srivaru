@@ -5,24 +5,23 @@ use srivaru;
 
 CREATE TABLE `Customer` (
   customer_id varchar(20) primary key,
-  `fname` varchar(20),
-  `lname` varchar(20),
-  `date` datetime default current_timestamp,
-  `vehicle_type` varchar(20),
-  `address` varchar(20),
-  `State` VARCHAR(20),
-  `COUNTRY` VARCHAR(20),
-  `pincode` int,
-  `mob_no` bigint,
-  `transaction_id` varchar(20),
-  `vin_number` varchar(20),
-  `chassis_number` varchar(20),
-  `Registration_Number` varchar(20),
-  `password_Cus` varchar(20)
+  `firstName` varchar(20),
+  `lastName` varchar(20),
+  email varchar(45),
+  `dateTime` datetime default current_timestamp,
+  `address` varchar(200),
+  district varchar(20),
+  `state` VARCHAR(20),
+  `country` VARCHAR(20),
+  `pinCode` int,
+  `mobNo` bigint,
+  `password` varchar(20)
 );
 
-desc customer;
 
+desc customer;
+use srivaru;
+drop table customer;
 select * from customer;
 
 

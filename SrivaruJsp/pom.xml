@@ -7,6 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>SrivaruJsp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,10 +16,17 @@
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>8.0.11</version>
+	</dependency>
+	
 <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>jstl</artifactId>
     <version>1.2</version>
+   <!-- <scope>provided</scope> -->   
 </dependency>
     
     <dependency>
@@ -27,13 +35,24 @@
     <version>2.5</version>
     <scope>provided</scope>
 </dependency>
-	<dependency>
-	    <groupId>mysql</groupId>
-	    <artifactId>mysql-connector-java</artifactId>
-	    <version>8.0.11</version>
-	</dependency>
+
   </dependencies>
+  
   <build>
     <finalName>SrivaruJsp</finalName>
+      <plugins>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+        <verbose>true</verbose>
+        <fork>true</fork>
+        <executable>C:\Program Files\Java\jdk1.8.0_171\bin\javac</executable>
+        <source>1.8</source>
+        <target>1.8</target>
+     </configuration>
+ </plugin>
+ </plugins>
   </build>
 </project>

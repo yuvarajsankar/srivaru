@@ -5,74 +5,100 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body {
+    background-image: url("Images/CustomerRegistration.jpg");
+}
+</style>
 </head>
 <% %>
-<body>
-<form align ="center" action="Customer" method = "post">
+<body><!-- To be centered using CSS -->
+<form  action="CustomerServlet" method = "post">
 <div >
 <table align ="center" >
   
 	<tr>
-    	<td>First Name</td>
-        <td>:</td>
-        <td><input type="text" name="firstName" required ></td>
+	<td>Your Details</td>
+    	
+        <td class="val"> </td>
+        <td><input type="text" name="firstName" placeholder="First Name" required ></td>
+        <td><input type="text" name="lastName" placeholder = "last Name"required></td>
     </tr>
     <tr>
         <td colspan="3">&nbsp;</td>
     </tr>
     <tr>
-    	<td class="name">Last Name</td>
-        <td class="val">:</td>
-        <td><input type="text" name="lastName" required></td>
+    	<td class="name" ></td>
+        <td class="val"></td>
+        <td><input type="text" name="email" placeholder="Email" required ></td>
+        <td><input type="text" name="cemail" placeholder = "Confirm Email"required></td>
+    
+        
     </tr>
     <tr>
         <td colspan="3">&nbsp;</td>
     </tr>
     <tr>
-    	<td class="name">Mobile Number</td>
-        <td class="val">:</td>
-        <td><input type="number" name="mobNoNumber" maxlength = 10 required ></td>
+  <td> </td>
+        <td class="val"> </td>
+        <td><input type="number" name="mobNo" placeholder = "Mobile Number" maxlength = 10 required="we need your mobile number" ></td>
     </tr>
     <tr>
         <td colspan="3">&nbsp;</td>
     </tr>
     <tr>
-    	<td class="name">Address</td>
-        <td class="val">:</td>
+  <td class="name">Your Address</td>
+        <td class="val"> </td>
         <td>
-        	<input type="text" name="address" >
+        	<input type="text" name="address" placeholder= "Door No, Street Name" required>
+        </td>
+    </tr>
+    <tr>
+    <td> </td>
+        <td class="val"> </td>
+        <td> <input type="text" name="address" placeholder= "City" required>
         </td>
     </tr>
     <tr>
         <td colspan="3">&nbsp;</td>
     </tr>
     <tr>
-    	<td class="name">Pin Code</td>
-        <td class="val">:</td>
-        <td><input type="number" name="pinCode" required></input></td>
+        <td> </td>
+        <td class="val"> </td>
+        <td><input type="number" name="pinCode" placeholder = "Pincode"required ></input></td>
     </tr>
     <tr>
         <td colspan="3">&nbsp;</td>
     </tr>
     <tr>
-    	<td>User Name </td>
-        <td>:</td>
-        <td><input type="text" name="userName" required ></td>
+    	<td>Login Credentials </td>
+        <td class="val"> </td>
+        <td><input type="text" name="userName" placeholder="User Name" required ></td>
+    </tr>
+    <tr>
+    	<td> </td>
+        <td class="val"> </td>
+        <td><input type="text" name="password" placeholder="Password" required ></td>
+    </tr>
+    <tr>
+    	<td> </td>
+        <td class="val"> </td>
+        <td><input type="text" name="password" placeholder="Re-type Password" required ></td>
     </tr>
     <tr>
         <td></td>
         
-        <td ><input type="button" value="cancel" onclick="index.jsp" ></td>
+      
     </tr>
  </table>
   <br><br>
-  <!--<input type="button" value="Apply" (click)="doApplyLeave()"
-   <td ><input type="button" value="Apply" onclick='doApply()' ></td>
-        <td ><input type="button" value="cancel" onclick="doCancel()" ></td>>-->
 </div>  
-<button type="submit" value="Submit">Submit</button>
+  <div align= "center">
+<input type="button" value = cancel onClick="footer.jsp" >
+<button type="submit" value="Submit">Next</button>
+</div>
 </form>
-  
+
 
 
 
