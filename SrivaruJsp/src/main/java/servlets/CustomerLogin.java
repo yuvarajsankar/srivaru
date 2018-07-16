@@ -36,8 +36,9 @@ public class CustomerLogin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestDispatcher rd=request.getRequestDispatcher("CustomerLogin.jsp");
+		
+        rd.forward(request,response);
 	}
 
 	/**
@@ -71,15 +72,25 @@ System.out.println("enetering login servlet");
 					ResultSet rs=ps.executeQuery();  
 								if(rs.next()) {
 
-								out.print(rs.getString("firstName"));  
+								out.print("''"+rs.getString("firstName")+"''"); 
+								
 								
 								Customer user = new Customer();
 								  user.setFirstName(rs.getString("firstName"));
 								  user.setEmail(rs.getString("email"));
 								  user.setMobNo(rs.getLong("mobNo"));
 								  request.setAttribute("user",user);
-								  getServletContext().getRequestDispatcher("/CustomerDashBoard.jsp")
-								                    .forward(request,response);
+								  out.println("'"+userName+"'");
+								  request.getSession().setAttribute("customer_id",rs.getString("customer_id"));
+								  request.getSession().setAttribute("fname",rs.getString("firstName"));
+								  request.getSession().setAttribute("lname",rs.getString("lastName"));
+								  request.getSession().setAttribute("email",rs.getString("email"));
+								  request.getSession().setAttribute("address",rs.getString("address"));
+								  request.getSession().setAttribute("pincode",rs.getInt("pincode"));
+								  request.getSession().setAttribute("mobno",rs.getLong("mobNo"));
+								
+								  
+								  request.getRequestDispatcher("CustomerDashBoard.jsp").forward(request, response);
 								}
 								else {
 									RequestDispatcher rd=request.getRequestDispatcher("CustomerLogin.jsp");

@@ -6,8 +6,19 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<style>
+body {
+    background-image: url("Images/svm1.jpg");
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+   
+    background-size: cover;
+}
+</style>
+</head>
 <body>
-<h3>Login Form</h3>  
+  
 <%  
 String profile_msg=(String)request.getAttribute("profile_msg");  
 if(profile_msg!=null){  
@@ -19,10 +30,16 @@ out.print(login_msg);
 }  
  %>  
  <br/> 
+ <div align = "center">
+ <h4>Login Form</h4>
 <form action="CustomerLogin" method="post">  
 <input type="text" placeholder = "User name or Email" name="userName"/><br/><br/>  
 <input type="password" placeholder="password" name="password"/><br/><br/>  
 <input type="submit" value="login"/>  
 </form>  
+
+<input id="inp" type="button" value="Not Registered ? " onclick="location.href='CustomerRegistration.jsp';" />
+</div>
+<jsp:include page="footer.jsp" />  
 </body>
 </html>

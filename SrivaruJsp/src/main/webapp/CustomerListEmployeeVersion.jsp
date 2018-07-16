@@ -14,6 +14,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Customer List</title>
 </head>
+<style>
+body {
+    background-image: url("Images/svm1.jpg");
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+   
+    background-size: cover;
+}
+</style>
+</head>
 <body>
 <form method="post" >
 

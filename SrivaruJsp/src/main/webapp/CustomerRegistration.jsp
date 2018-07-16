@@ -7,7 +7,12 @@
 <title>Insert title here</title>
 <style>
 body {
-    background-image: url("Images/CustomerRegistration.jpg");
+    background-image: url("Images/svm1.jpg");
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+   
+    background-size: cover;
 }
 </style>
 </head>

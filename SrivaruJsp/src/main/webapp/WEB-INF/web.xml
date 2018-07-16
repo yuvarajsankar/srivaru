@@ -16,6 +16,18 @@
   	<description></description>
   	<servlet-class>servlets.CustomerLogin</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EmployeeServlet</servlet-name>
+  	<display-name>EmployeeServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.EmployeeServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PreOrderServlet</servlet-name>
+  	<display-name>PreOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.PreOrderServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>CustomerServlet</servlet-name>
   	<url-pattern>/CustomerServlet</url-pattern>
@@ -23,6 +35,14 @@
   <servlet-mapping>
   	<servlet-name>CustomerLogin</servlet-name>
   	<url-pattern>/CustomerLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeServlet</servlet-name>
+  	<url-pattern>/EmployeeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PreOrderServlet</servlet-name>
+  	<url-pattern>/PreOrderServlet</url-pattern>
   </servlet-mapping>
 
 </web-app>
