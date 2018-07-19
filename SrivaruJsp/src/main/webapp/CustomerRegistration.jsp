@@ -83,12 +83,12 @@ body {
     <tr>
     	<td> </td>
         <td class="val"> </td>
-        <td><input type="text" name="password" placeholder="Password" required ></td>
+        <td><input type="password" name="password" placeholder="Password" required ></td>
     </tr>
     <tr>
     	<td> </td>
         <td class="val"> </td>
-        <td><input type="text" name="password" placeholder="Re-type Password" required ></td>
+        <td><input type="password" name="password" placeholder="Re-type Password" required ></td>
     </tr>
     <tr>
         <td></td>

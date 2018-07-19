@@ -51,7 +51,7 @@ public class PreOrderServlet extends HttpServlet {
 			"jdbc:mysql://localhost:3306/srivaru?useSSL=false","root","0000");
 
 			String query = " insert into preOrder (preOrderId, model, series, colour,battery, customer_id)"
-			        + " values (uuid_short(), ?, ?,?,?,?)";
+			        + " values ((floor(1000000 + (rand() * 99999999))), ?, ?,?,?,?)";
 			      PreparedStatement preparedStmt = con.prepareStatement(query);
 			      
 			      preparedStmt.setString(1, model);

@@ -1,11 +1,3 @@
-<% out.print(request.getSession().getAttribute("fname"));
-out.print(request.getSession().getAttribute("lname"));
-out.print(request.getSession().getAttribute("email"));
-out.print(request.getSession().getAttribute("address"));
-out.print(request.getSession().getAttribute("pincode"));
-out.print(request.getSession().getAttribute("mobno"));
-%>
-
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>

@@ -100,6 +100,26 @@ body {
 </div>
 </form>
 
+<script type="text/javascript">
+$( "#number" ).keyup(function() {
+    numberval = $('#number').val();
+
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "http://postalpincode.in/api/pincode/$pincode", 
+        data: {pincode: numberval},
+        success: function(data) {
+           $('#name').val(data["name"]);
+           $("#email").val(data["email"]);
+        },
+        error : function(){
+           alert('Some error occurred!');
+        }
+    });
+});
+</script>
+
 
 
 

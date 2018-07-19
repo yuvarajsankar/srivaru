@@ -64,11 +64,12 @@ System.out.println("enetering login servlet");
 						"jdbc:mysql://localhost:3306/srivaru?useSSL=false","root","0000");
 			
 				PreparedStatement ps=con.prepareStatement(  
-					    "select * from customer where userName=? and password=?");  
+					    "select * from customer where password=? and username=? or email=? and password=?");  
 					  
-					ps.setString(1,n);  
-					ps.setString(2,p);  
-					              
+					ps.setString(1,p);  
+					ps.setString(2,n);  
+					ps.setString(3,n);   
+					ps.setString(4,p);
 					ResultSet rs=ps.executeQuery();  
 								if(rs.next()) {
 
