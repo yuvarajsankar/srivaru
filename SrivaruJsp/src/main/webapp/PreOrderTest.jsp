@@ -12,7 +12,8 @@ $(document).ready(function(){
         document.getElementById("demo").innerHTML = "200";
         var paint = 200;
         localStorage.paint= 200;
-        var total = paint + battery;
+        var total = Number (localStorage.paint) + Number (localStorage.battery);
+        document.getElementById("total").innerHTML = total;
     });
 });
 
@@ -25,7 +26,8 @@ $(document).ready(function(){
         var battery;
         
         localStorage.paint= 500;
-        document.getElementById("total").innerHTML = paint;
+        var total = Number (localStorage.paint) + Number (localStorage.battery);
+        document.getElementById("total").innerHTML = total;
     });
 });
 $(document).ready(function(){
@@ -55,24 +57,31 @@ $(document).ready(function(){
 }
 #div3 {
     position: absolute;
-    left: 150px;
+       left: 100px;
+    top: 150px;
+}
+#div5 {
+  position: absolute;
+      left: 50px;
+    top: 150px;
+}
+#div4 {
+  position: absolute;
+      left: 50px;
     top: 200px;
-}</style>
+}
+</style>
 </head>
 <body>
 
 <div id="div1" align= "center"><img src="Images/svm1.jpg" width="50" height="33"></div>
-
-<strong>Colours</strong>
-<div id ="div3" data-rel="Images/green.png">
+<div id ="div3" data-rel="Images/bluebike.jpg">
 
 <img  src="Images/blue.jpg" width="50" height="33">
 </div>
 <div id ="div2" data-rel="Images/orangebike.jpg">
 <img  src="Images/red.png" width="50" height="33">
 </div>
-
-<strong>Battery</strong>
 <div id ="div4" data-rel="Images/green.png">
 
 <img  src="Images/blue.jpg" width="50" height="33">
