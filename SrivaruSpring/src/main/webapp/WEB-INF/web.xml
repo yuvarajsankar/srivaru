@@ -1,0 +1,68 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>CustomerServlet</servlet-name>
+  	<display-name>CustomerServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.CustomerServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CustomerLogin</servlet-name>
+  	<display-name>CustomerLogin</display-name>
+  	<description></description>
+  	<servlet-class>servlets.CustomerLogin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmployeeServlet</servlet-name>
+  	<display-name>EmployeeServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.EmployeeServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PreOrderServlet</servlet-name>
+  	<display-name>PreOrderServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.PreOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PreOrderTestServlet</servlet-name>
+  	<display-name>PreOrderTestServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.PreOrderTestServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmployeeLogin</servlet-name>
+  	<display-name>EmployeeLogin</display-name>
+  	<description></description>
+  	<servlet-class>servlets.EmployeeLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CustomerServlet</servlet-name>
+  	<url-pattern>/CustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CustomerLogin</servlet-name>
+  	<url-pattern>/CustomerLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeServlet</servlet-name>
+  	<url-pattern>/EmployeeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PreOrderServlet</servlet-name>
+  	<url-pattern>/PreOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PreOrderTestServlet</servlet-name>
+  	<url-pattern>/PreOrderTestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeLogin</servlet-name>
+  	<url-pattern>/EmployeeLogin</url-pattern>
+  </servlet-mapping>
+
+</web-app>
