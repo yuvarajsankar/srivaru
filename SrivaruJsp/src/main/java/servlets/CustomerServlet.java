@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Customer;
+import model.SendMailTLS;
 import dao.CustomerDao;
 
 
@@ -56,6 +57,8 @@ public class CustomerServlet extends HttpServlet {
 		Integer pinCode = Integer.parseInt(request.getParameter("pinCode"));
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
+		
+		SendMailTLS.authenticateMail(email, firstName);
 		System.out.println("entering servlet");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");  
