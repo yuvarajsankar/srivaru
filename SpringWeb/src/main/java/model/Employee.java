@@ -1,6 +1,8 @@
 package main.java.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,19 +13,31 @@ import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
- 
+
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.joda.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
  
+
 @Entity
 @Table(name="EMPLOYEE")
 public class Employee {
  
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	/*@Id
+	@GeneratedValue(generator = "UUID")
+	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+	
+	@Column(name = "id", updatable = false, nullable = false)
+	/
+	 * 
+	 */
+	@Id
+	@Column(name="uuid",insertable=true)
+	@GeneratedValue
+    private String id;
  
     @Size(min=3, max=50)
     @Column(name = "NAME", nullable = false)
@@ -44,11 +58,11 @@ public class Employee {
     @Column(name = "SSN", unique=true, nullable = false)
     private String ssn;
  
-    public int getId() {
+    public String getId() {
         return id;
     }
  
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
  
@@ -64,8 +78,8 @@ public class Employee {
         return joiningDate;
     }
  
-    public void setJoiningDate(LocalDate joiningDate) {
-        this.joiningDate = joiningDate;
+    public void setJoiningDate(LocalDate localDate) {
+        this.joiningDate = localDate;
     }
  
     public BigDecimal getSalary() {
@@ -88,7 +102,7 @@ public class Employee {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + id;
+        result = prime * result;
         result = prime * result + ((ssn == null) ? 0 : ssn.hashCode());
         return result;
     }

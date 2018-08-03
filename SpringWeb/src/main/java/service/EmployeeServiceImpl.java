@@ -1,6 +1,8 @@
 package main.java.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeDao dao;
      
-    public Employee findById(int id) {
+    public Employee findById(String id) {
         return dao.findById(id);
     }
  
@@ -51,9 +53,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         return dao.findEmployeeBySsn(ssn);
     }
  
-    public boolean isEmployeeSsnUnique(Integer id, String ssn) {
+    public boolean isEmployeeSsnUnique(String id, String ssn) {
         Employee employee = findEmployeeBySsn(ssn);
         return ( employee == null || ((id != null) && (employee.getId() == id)));
     }
+
+	
+
+
      
 }

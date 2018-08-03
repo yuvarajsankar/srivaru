@@ -1,12 +1,14 @@
 package main.java.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import main.java.model.Employee;
  
 public interface EmployeeService {
  
-    Employee findById(int id);
+    Employee findById(String id);
      
     void saveEmployee(Employee employee);
      
@@ -18,6 +20,6 @@ public interface EmployeeService {
      
     Employee findEmployeeBySsn(String ssn);
  
-    boolean isEmployeeSsnUnique(Integer id, String ssn);
+    boolean isEmployeeSsnUnique(String uuid, String ssn);
      
 }

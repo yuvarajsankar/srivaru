@@ -1,11 +1,13 @@
 package main.java.dao;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import main.java.model.Employee;
  
 public interface EmployeeDao {
  
-    Employee findById(int id);
+    Employee findById(String id);
  
     void saveEmployee(Employee employee);
      
