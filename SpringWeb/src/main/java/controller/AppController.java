@@ -1,5 +1,6 @@
 package main.java.controller;
 
+import main.java.model.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -15,7 +16,9 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
- 
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+
 import main.java.model.Employee;
 import main.java.service.EmployeeService;
  
@@ -40,6 +43,7 @@ public class AppController {
         return "allemployees";
     }
  
+ 
     /*
      * This method will provide the medium to add a new employee.
      */
@@ -48,9 +52,17 @@ public class AppController {
         Employee employee = new Employee();
         model.addAttribute("employee", employee);
         model.addAttribute("edit", false);
+       
         return "registration";
     }
  
+    @RequestMapping(value = { "/360" }, method = RequestMethod.GET)
+    public String newOrder(ModelMap model) {
+    	System.out.println("entering 360 view");
+       
+        return "index";
+    }
+   
     /*
      * This method will be called on form submission, handling POST request for
      * saving employee in database. It also validates the user input

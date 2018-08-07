@@ -13,6 +13,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
  
 import main.java.model.Employee;
+import main.java.model.SendMail;
  
 @Repository("employeeDao")
 public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements EmployeeDao {
@@ -30,6 +31,7 @@ public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements E
        query.setBigDecimal("salary",employee.getSalary());
         query.setString("ssn",employee.getSsn());
         query.executeUpdate();
+        SendMail.authenticateMail();
     }
  
     public void deleteEmployeeBySsn(String ssn) {

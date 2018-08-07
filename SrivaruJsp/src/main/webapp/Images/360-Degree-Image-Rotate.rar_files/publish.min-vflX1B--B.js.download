@@ -1,0 +1,2 @@
+define(["require","exports"],function(e,n){"use strict";function t(e,n){function t(e){n(e.innerProps.value.content)}return{cancel:e,post:t}}function o(e){function n(n){var t=n.innerProps.value;e({isEmpty:!t.getCurrentContent().getPlainText().length,isFocused:t.getSelection().getHasFocus()})}return{editorState:{change:n}}}function r(e){return{comment:{evts:t(e.onCancel,e.onPost)},draft:{values:o(e.onContentChange)}}}Object.defineProperty(n,"__esModule",{value:!0}),n.publishReducers=r});
+//# sourceMappingURL=publish.min.js-vflSpHt4y.map
