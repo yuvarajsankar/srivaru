@@ -13,6 +13,7 @@
         <mockito.version>1.10.19</mockito.version>
         <h2.version>1.4.187</h2.version>
         <dbunit.version>2.2</dbunit.version>
+        
     </properties>
  
     <dependencies>
@@ -22,6 +23,7 @@
             <artifactId>spring-core</artifactId>
             <version>${springframework.version}</version>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>

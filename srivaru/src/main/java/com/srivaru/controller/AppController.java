@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
+import com.srivaru.service.CustomerService;
 import com.srivaru.service.EmployeeService;
+import com.srivaru.model.Customer;
 import com.srivaru.model.Employee;
 
 
@@ -29,6 +31,7 @@ public class AppController {
  
 	 @Autowired
 	    EmployeeService service;
+	 	CustomerService customerservice;
 	     
 	    @Autowired
 	    MessageSource messageSource;
@@ -76,7 +79,18 @@ public class AppController {
 	       
 	        return "index";
 	    }
-	   
+	    @RequestMapping(value = { "/newuser" }, method = RequestMethod.POST)
+	    public String saveCustomer(@Valid Customer customer, BindingResult result,
+	            ModelMap model) {
+	    	 if (result.hasErrors()) {
+	    	return "customerregistration";
+	 	   	    }
+	    	 customerservice.saveCustomer(customer);
+	    	  model.addAttribute("success", customer.getFname() + " registered successfully");
+		        return "success";
+	    }
+	    
+	    
 	    /*
 	     * This method will be called on form submission, handling POST request for
 	     * saving employee in database. It also validates the user input
@@ -88,6 +102,7 @@ public class AppController {
 	        if (result.hasErrors()) {
 	            return "registration";
 	        }
+	        
 	 
 	        /*
 	         * Preferred way to achieve uniqueness of field [ssn] should be implementing custom @Unique annotation 
@@ -120,7 +135,7 @@ public class AppController {
 	        model.addAttribute("edit", true);
 	        return "registration";
 	    }
-	     
+	    
 	    /*
 	     * This method will be called on form submission, handling POST request for
 	     * updating employee in database. It also validates the user input

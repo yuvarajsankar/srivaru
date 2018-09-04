@@ -1,0 +1,210 @@
+
+I have a device which sends a JSON message via HTTP POST, to a web server. The server receives the JSON message as payload and decodes and prints it on the web page and also sends back a 200 OK response to the post.
+
+Now, I am trying to replicate the same with a fake Java client code to act as the device and a fake server using servlet and JSP. The servlet code and JSP run as one project and the Java code run as another project.
+
+I am using Eclipse and Tomcat server.
+
+My code is as follows: Servlet Code: (This is saved in Java Resources > src > DefaultPackage)
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+@WebServlet("/HelloWorld")
+public class HelloWorld extends HttpServlet {  
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        StringBuilder sb = new StringBuilder();
+
+        BufferedReader reader = request.getReader();
+        try {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+
+                    sb.append(line).append('\n');
+            }
+        } finally {
+            reader.close();
+        }
+        System.out.println(sb.toString());
+
+        String api_key = null; 
+        try {
+            //JSONObject jsonObj = new JSONObject(sb.toString().substring(sb.toString().indexOf('{')));
+            //JSONTokener t = new JSONTokener(sb.toString());
+                JSONObject obj = new JSONObject(sb.toString().replace("\uFEFF", ""));
+                System.out.println(obj.toString());
+                api_key= (String) obj.get("api_key");
+                //String node_number = (String) obj.get("node_number");
+                //String tag_statuses = (String) obj.get("tag_statuses");
+                //String voltage = (String) obj.get("voltage");
+
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } 
+        System.out.println("api_key:"+ api_key+"\n");
+        response.setStatus(response.SC_OK);
+
+        //response.setContentType("text/html");  
+        //PrintWriter out = response.getWriter();  
+        //out.println("<h1>"+out +"</h1>");
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/NewFile.jsp");
+        request.setAttribute("api_key", api_key); // set your String value in the attribute
+        dispatcher.forward( request, response );
+    }
+    public void doGet(HttpServletRequest req, HttpServletResponse res) throws  ServletException, IOException {
+        doPost(req, res);
+    }
+}
+
+https://stackoverflow.com/questions/31730696/real-time-data-web-page
+
+
+  <!--<input type="button" value="Apply" (click)="doApplyLeave()"
+   <td ><input type="button" value="Apply" onclick='doApply()' ></td>
+        <td ><input type="button" value="cancel" onclick="doCancel()" ></td>>-->
+
+		
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+            dispatcher.forward(request, response);
+
+http://postalpincode.in/api/pincode/641008
+    <a href="/edit?id=<c:out value='${book.id}' />">Edit</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/delete?id=<c:out value='${book.id}' />">Delete</a>
+						
+						
+						
+						
+						
+						
+						
+public class Examples  {
+
+    public static void main(String[] args)throws NullPointerException {
+        String[] given = new String[20];
+        given[0]  = ("do some java programming");
+        given[1] = ("do some grocery shopping");
+        given[2] = ("play soccer at the west field");
+        String input = new String();
+
+
+        System.out.println("Enter the string to compare");
+        input = "d";
+        for (int i=0; i <20; i++){
+        if(given[i].contains(input))
+        {
+            System.out.println(given[i]);
+        }
+        else
+        {
+            //do nothing
+        }
+        }
+    }
+}
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    
+  } );
+  </script>
+</head>
+<body>
+ 
+<p><input type="text" id="datepicker" name="datepicker" placeholder = "Date to be serviced"></p>
+
+<div class="input-group clockpicker">
+    <input type="text" class="form-control" value="09:30">
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+    </span>
+</div>
+<script type="text/javascript">
+$('.clockpicker').clockpicker();
+</script>
+
+
+maven
+java
+spring
+jquery
+mysql
+hibernate
+jsp and servlets
+
+
+
+https://api.textlocal.in/send/?username=yraj@srivarumotors.com&hash=Geostrom23!&sender=TXTLCL&numbers=+918883315009&message=Test_message.
+
+{"balance":9,"batch_id":449017139,"cost":1,"num_messages":1,"message":{"num_parts":1,"sender":"TXTLCL","content":"Test_message."},"receipt_url":"","custom":"","messages":[{"id":"1475944291","recipient":918883315009}],"status":"success"}
+
+
+254408791102-7li5qv9pjm6rkbvan0v444ttet9bg53c.apps.googleusercontent.com
+
+
+http://websystique.com/springmvc/spring-4-mvc-and-hibernate4-integration-example-using-annotations/
+
+
+
+http://www.technicalkeeda.com/spring-tutorials/spring-4-mvc-static-resource-mapping-example
+
+
+CREATE TABLE EMPLOYEE(
+	uuid char(36) NUll,  
+    name VARCHAR(50) NOT NULL,
+    joining_date DATE NOT NULL,
+    salary DOUBLE NOT NULL,
+    ssn VARCHAR(30) NOT NULL UNIQUE
+
+);
+DELIMITER ;;
+CREATE TRIGGER before_insert_employee
+BEFORE INSERT ON employee
+FOR EACH ROW
+BEGIN
+  IF new.uuid IS NULL THEN
+    SET new.uuid = uuid();
+  END IF;
+END
+;;
+
+CREATE TABLE `Customer` (
+  `customer_id` char(36) null,
+  `firstname` varchar(20),
+  `lastname` varchar(20),
+  `date` datetime default current_timestamp ,
+  `address` varchar(200),
+  `atate` VARCHAR(20),
+  `country` VARCHAR(20),
+  `pincode` int,
+  `mob_no` bigint,
+  `password` varchar(20),
+  KEY `primary key` (`customer_id`)
+);
+DELIMITER ;;
+CREATE TRIGGER before_insert_customer
+BEFORE INSERT ON customer
+FOR EACH ROW
+BEGIN
+  IF new.customer_id IS NULL THEN
+    SET new.customer_id = uuid();
+  END IF;
+END
+;;
